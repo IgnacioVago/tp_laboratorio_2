@@ -1,0 +1,9 @@
+D:\ignacio vago\trabajoPracticoCalculadora\trabajoPracticoCalculadora\bin\Debug\trabajoPracticoCalculadora.exe.config
+D:\ignacio vago\trabajoPracticoCalculadora\trabajoPracticoCalculadora\bin\Debug\trabajoPracticoCalculadora.exe
+D:\ignacio vago\trabajoPracticoCalculadora\trabajoPracticoCalculadora\bin\Debug\trabajoPracticoCalculadora.pdb
+D:\ignacio vago\trabajoPracticoCalculadora\trabajoPracticoCalculadora\obj\Debug\trabajoPracticoCalculadora.csprojResolveAssemblyReference.cache
+D:\ignacio vago\trabajoPracticoCalculadora\trabajoPracticoCalculadora\obj\Debug\trabajoPracticoCalculadora.Form1.resources
+D:\ignacio vago\trabajoPracticoCalculadora\trabajoPracticoCalculadora\obj\Debug\trabajoPracticoCalculadora.Properties.Resources.resources
+D:\ignacio vago\trabajoPracticoCalculadora\trabajoPracticoCalculadora\obj\Debug\trabajoPracticoCalculadora.csproj.GenerateResource.Cache
+D:\ignacio vago\trabajoPracticoCalculadora\trabajoPracticoCalculadora\obj\Debug\trabajoPracticoCalculadora.exe
+D:\ignacio vago\trabajoPracticoCalculadora\trabajoPracticoCalculadora\obj\Debug\trabajoPracticoCalculadora.pdb
