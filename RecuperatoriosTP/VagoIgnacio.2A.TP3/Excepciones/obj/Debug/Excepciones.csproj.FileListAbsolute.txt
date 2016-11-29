@@ -1,0 +1,6 @@
+C:\Users\Nacho\Desktop\visual\VagoIgnacio.2A.TP3\Excepciones\bin\Debug\Excepciones.exe.config
+C:\Users\Nacho\Desktop\visual\VagoIgnacio.2A.TP3\Excepciones\bin\Debug\Excepciones.exe
+C:\Users\Nacho\Desktop\visual\VagoIgnacio.2A.TP3\Excepciones\bin\Debug\Excepciones.pdb
+C:\Users\Nacho\Desktop\visual\VagoIgnacio.2A.TP3\Excepciones\obj\Debug\Excepciones.csprojResolveAssemblyReference.cache
+C:\Users\Nacho\Desktop\visual\VagoIgnacio.2A.TP3\Excepciones\obj\Debug\Excepciones.exe
+C:\Users\Nacho\Desktop\visual\VagoIgnacio.2A.TP3\Excepciones\obj\Debug\Excepciones.pdb
