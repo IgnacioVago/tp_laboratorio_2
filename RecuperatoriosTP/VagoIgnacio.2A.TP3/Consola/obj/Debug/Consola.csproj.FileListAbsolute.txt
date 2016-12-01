@@ -12,3 +12,17 @@ C:\Users\Nacho\Desktop\visual\VagoIgnacio.2A.TP3\Consola\bin\Debug\EntidadesInst
 C:\Users\Nacho\Desktop\visual\VagoIgnacio.2A.TP3\Consola\bin\Debug\Excepciones.pdb
 C:\Users\Nacho\Desktop\visual\VagoIgnacio.2A.TP3\Consola\obj\Debug\Consola.exe
 C:\Users\Nacho\Desktop\visual\VagoIgnacio.2A.TP3\Consola\obj\Debug\Consola.pdb
+C:\Users\Nacho\Desktop\VagoIgnacio.2A.TP3\Consola\bin\Debug\Consola.exe.config
+C:\Users\Nacho\Desktop\VagoIgnacio.2A.TP3\Consola\obj\Debug\Consola.exe
+C:\Users\Nacho\Desktop\VagoIgnacio.2A.TP3\Consola\obj\Debug\Consola.pdb
+C:\Users\Nacho\Desktop\VagoIgnacio.2A.TP3\Consola\bin\Debug\Consola.exe
+C:\Users\Nacho\Desktop\VagoIgnacio.2A.TP3\Consola\bin\Debug\Consola.pdb
+C:\Users\Nacho\Desktop\VagoIgnacio.2A.TP3\Consola\bin\Debug\Archivos.exe
+C:\Users\Nacho\Desktop\VagoIgnacio.2A.TP3\Consola\bin\Debug\EntidadesAbstractas.exe
+C:\Users\Nacho\Desktop\VagoIgnacio.2A.TP3\Consola\bin\Debug\EntidadesInstanciables.exe
+C:\Users\Nacho\Desktop\VagoIgnacio.2A.TP3\Consola\bin\Debug\Excepciones.exe
+C:\Users\Nacho\Desktop\VagoIgnacio.2A.TP3\Consola\bin\Debug\Archivos.pdb
+C:\Users\Nacho\Desktop\VagoIgnacio.2A.TP3\Consola\bin\Debug\EntidadesAbstractas.pdb
+C:\Users\Nacho\Desktop\VagoIgnacio.2A.TP3\Consola\bin\Debug\EntidadesInstanciables.pdb
+C:\Users\Nacho\Desktop\VagoIgnacio.2A.TP3\Consola\bin\Debug\Excepciones.pdb
+C:\Users\Nacho\Desktop\VagoIgnacio.2A.TP3\Consola\obj\Debug\Consola.csprojResolveAssemblyReference.cache
