@@ -3,23 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-using System.Net; // Avisar del espacio de nombre
+using System.Net; 
 using System.ComponentModel;
 
 namespace Hilo
 {
-    public delegate void EventoDescargaFinalizada(string html);
-    public delegate void EventoPorcentajeDeDescarga(int porcentaje);
+    
     public class Descargador
     {
-        private string html;
-        private Uri direccion;
+        private string _html;
+        private Uri _direccion;
+
+        public delegate void EventProgress(int status);
+        public event EventProgress evento_Progreso;
+        public delegate void EventCompleted(string web);
+        public event EventCompleted evento_Terminado;
 
         public Descargador(Uri direccion)
         {
-            this.html = "";
-            this.direccion = direccion;
+            this._html = "";
+            this._direccion = direccion;
         }
 
         public void IniciarDescarga()
@@ -30,7 +33,7 @@ namespace Hilo
                 cliente.DownloadProgressChanged += this.WebClientDownloadProgressChanged;
                 cliente.DownloadStringCompleted += this.WebClientDownloadCompleted;
 
-                cliente.DownloadStringAsync(this.direccion);
+                cliente.DownloadStringAsync(this._direccion);
             }
             catch (Exception e)
             {
@@ -38,18 +41,27 @@ namespace Hilo
             }
         }
 
-        public event EventoPorcentajeDeDescarga PorcentajeDescarga;
 
         private void WebClientDownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
-            this.PorcentajeDescarga(e.ProgressPercentage);
+            this.evento_Progreso(e.ProgressPercentage);
         }
 
-        public event EventoDescargaFinalizada DescargaTerminada;
+        
         private void WebClientDownloadCompleted(object sender, DownloadStringCompletedEventArgs e)
         {
-            this.html = e.Result;
-            this.DescargaTerminada(this.html);
+            try
+            {
+                this._html = e.Result;
+            }
+            catch (Exception exception)
+            {
+                this._html = exception.Message;
+            }
+            finally
+            {
+                this.evento_Terminado(this._html);
+            }
         }
     }
 }

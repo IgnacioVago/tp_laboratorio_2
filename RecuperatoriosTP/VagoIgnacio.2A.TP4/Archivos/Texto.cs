@@ -9,17 +9,17 @@ namespace Archivos
 {
     public class Texto : IArchivo<string>
     {
-        public string direccionDeArchivo;
+        private string _direccionDeArchivo;
         public Texto(string archivo)
         {
-            this.direccionDeArchivo = archivo;
+            this._direccionDeArchivo = archivo;
         }
 
         public bool guardar(string datos)
         {
             try
             {
-                StreamWriter escritor = new StreamWriter(this.direccionDeArchivo, true);
+                StreamWriter escritor = new StreamWriter(this._direccionDeArchivo, true);
                 escritor.WriteLine(datos);
                 escritor.Close();
 
@@ -28,7 +28,7 @@ namespace Archivos
             catch (Exception)
             {
 
-                throw new Exception("NO GUARDA.");
+                return false;
             }
  
         }
@@ -38,11 +38,11 @@ namespace Archivos
             try
             {
                 StreamReader lector;
-                lector = new StreamReader(this.direccionDeArchivo);
+                lector = new StreamReader(this._direccionDeArchivo);
 
                 datos = new List<string>();
 
-                while (lector.EndOfStream == false)
+                while (!lector.EndOfStream)
                 {
                     datos.Add(lector.ReadLine());
                 }
@@ -54,7 +54,7 @@ namespace Archivos
             catch (Exception)
             {
                 datos = default(List<string>);
-                throw new Exception("NO LEE.");
+                return false;
             }
  
         }

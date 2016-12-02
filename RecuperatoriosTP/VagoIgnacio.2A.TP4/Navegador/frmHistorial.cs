@@ -27,10 +27,7 @@ namespace Navegador
             List<string> historial;
             if (archivos.leer(out historial))
             {
-                foreach (string item in historial)
-                {
-                    this.lstHistorial.Items.Add(item);
-                }
+                lstHistorial.DataSource = historial;
             }
             else
             {

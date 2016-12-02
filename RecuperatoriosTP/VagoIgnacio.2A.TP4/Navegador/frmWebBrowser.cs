@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using System.Threading;
 using Hilo;
 using Archivos;
+using Navegador;
 
 namespace Navegador
 {
@@ -102,15 +102,15 @@ namespace Navegador
                 web = new Uri(this.txtUrl.Text);
                 descargador = new Descargador(web);
 
-                descargador.PorcentajeDescarga += this.ProgresoDescarga;
-                descargador.DescargaTerminada += this.FinDescarga;
+                descargador.evento_Progreso += this.ProgresoDescarga;
+                descargador.evento_Terminado += this.FinDescarga;
 
                 hilo = new Thread(new ThreadStart(descargador.IniciarDescarga));
                 hilo.Start();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message, "ERROR!!!");
             }
             finally
             {
