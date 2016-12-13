@@ -8,13 +8,8 @@ C:\Users\profesor\Downloads\Navegador TP-4\Hilo\bin\Debug\Hilo.pdb
 C:\Users\profesor\Downloads\Navegador TP-4\Hilo\obj\Debug\Hilo.csprojResolveAssemblyReference.cache
 C:\Users\profesor\Downloads\Navegador TP-4\Hilo\obj\Debug\Hilo.dll
 C:\Users\profesor\Downloads\Navegador TP-4\Hilo\obj\Debug\Hilo.pdb
-C:\Users\Nacho\Desktop\Navegador TP-4 - AlumnoV2\Navegador TP-4 - AlumnoV2\Hilo\bin\Debug\Hilo.dll
-C:\Users\Nacho\Desktop\Navegador TP-4 - AlumnoV2\Navegador TP-4 - AlumnoV2\Hilo\bin\Debug\Hilo.pdb
-C:\Users\Nacho\Desktop\Navegador TP-4 - AlumnoV2\Navegador TP-4 - AlumnoV2\Hilo\obj\Debug\Hilo.csprojResolveAssemblyReference.cache
-C:\Users\Nacho\Desktop\Navegador TP-4 - AlumnoV2\Navegador TP-4 - AlumnoV2\Hilo\obj\Debug\Hilo.dll
-C:\Users\Nacho\Desktop\Navegador TP-4 - AlumnoV2\Navegador TP-4 - AlumnoV2\Hilo\obj\Debug\Hilo.pdb
-C:\Users\Nacho\Desktop\yoyo\tp_laboratorio_2-master\RecuperatoriosTP\VagoIgnacio.2A.TP4\Hilo\bin\Debug\Hilo.dll
-C:\Users\Nacho\Desktop\yoyo\tp_laboratorio_2-master\RecuperatoriosTP\VagoIgnacio.2A.TP4\Hilo\bin\Debug\Hilo.pdb
-C:\Users\Nacho\Desktop\yoyo\tp_laboratorio_2-master\RecuperatoriosTP\VagoIgnacio.2A.TP4\Hilo\obj\Debug\Hilo.csprojResolveAssemblyReference.cache
-C:\Users\Nacho\Desktop\yoyo\tp_laboratorio_2-master\RecuperatoriosTP\VagoIgnacio.2A.TP4\Hilo\obj\Debug\Hilo.dll
-C:\Users\Nacho\Desktop\yoyo\tp_laboratorio_2-master\RecuperatoriosTP\VagoIgnacio.2A.TP4\Hilo\obj\Debug\Hilo.pdb
+F:\Segundo cuatrimestre\Ortiz progII\TP4\Navegador TP-4 - AlumnoV2\Hilo\obj\Debug\Hilo.csprojResolveAssemblyReference.cache
+F:\Segundo cuatrimestre\Ortiz progII\TP4\Navegador TP-4 - AlumnoV2\Hilo\bin\Debug\Hilo.dll
+F:\Segundo cuatrimestre\Ortiz progII\TP4\Navegador TP-4 - AlumnoV2\Hilo\bin\Debug\Hilo.pdb
+F:\Segundo cuatrimestre\Ortiz progII\TP4\Navegador TP-4 - AlumnoV2\Hilo\obj\Debug\Hilo.dll
+F:\Segundo cuatrimestre\Ortiz progII\TP4\Navegador TP-4 - AlumnoV2\Hilo\obj\Debug\Hilo.pdb

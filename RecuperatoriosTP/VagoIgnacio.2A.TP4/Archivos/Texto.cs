@@ -9,17 +9,27 @@ namespace Archivos
 {
     public class Texto : IArchivo<string>
     {
-        private string _direccionDeArchivo;
+        public string rutaArchivo;
+
+        /// <summary>
+        /// Constructor que asigna la ruta del archivo.
+        /// </summary>
+        /// <param name="archivo">Ruta del archivo.</param>
         public Texto(string archivo)
         {
-            this._direccionDeArchivo = archivo;
+            this.rutaArchivo = archivo;
         }
 
+        /// <summary>
+        /// Guarda los datos.
+        /// </summary>
+        /// <param name="datos">Datos a guardar.</param>
+        /// <returns></returns>
         public bool guardar(string datos)
         {
             try
             {
-                StreamWriter escritor = new StreamWriter(this._direccionDeArchivo, true);
+                StreamWriter escritor = new StreamWriter(this.rutaArchivo, true);
                 escritor.WriteLine(datos);
                 escritor.Close();
 
@@ -27,22 +37,26 @@ namespace Archivos
             }
             catch (Exception)
             {
-
-                return false;
+                
+                throw new Exception("NO GUARDA.");
             }
- 
         }
 
+        /// <summary>
+        /// Lee los datos.
+        /// </summary>
+        /// <param name="datos">Datos a leer.</param>
+        /// <returns></returns>
         public bool leer(out List<string> datos)
         {
             try
             {
                 StreamReader lector;
-                lector = new StreamReader(this._direccionDeArchivo);
+                lector = new StreamReader(this.rutaArchivo);
 
                 datos = new List<string>();
 
-                while (!lector.EndOfStream)
+                while (lector.EndOfStream == false)
                 {
                     datos.Add(lector.ReadLine());
                 }
@@ -54,9 +68,9 @@ namespace Archivos
             catch (Exception)
             {
                 datos = default(List<string>);
-                return false;
+                throw new Exception("NO LEE.");
             }
- 
+
         }
     }
 }

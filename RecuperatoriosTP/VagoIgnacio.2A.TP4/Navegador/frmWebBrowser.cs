@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using System.Threading;
 using Hilo;
 using Archivos;
-using Navegador;
 
 namespace Navegador
 {
@@ -19,10 +19,20 @@ namespace Navegador
         private const string ESCRIBA_AQUI = "Escriba aquí...";
         Archivos.Texto archivos;
 
+        /// <summary>
+        /// Inicializa el form del WebBrowser
+        /// </summary>
+
         public frmWebBrowser()
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Le da formato al textBox para ingresar la URL e inicializa el archivo del historial
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void frmWebBrowser_Load(object sender, EventArgs e)
         {
@@ -64,6 +74,11 @@ namespace Navegador
         }
         #endregion
 
+        /// <summary>
+        /// Evento que actualiza el progreso de la descarga
+        /// </summary>
+        /// <param name="progreso"></param>
+
         delegate void ProgresoDescargaCallback(int progreso);
         private void ProgresoDescarga(int progreso)
         {
@@ -77,6 +92,12 @@ namespace Navegador
                 tspbProgreso.Value = progreso;
             }
         }
+
+        /// <summary>
+        /// Evento que finaliza la descarga del html y lo muestra por el richTextBox
+        /// </summary>
+        /// <param name="html"></param>
+
         delegate void FinDescargaCallback(string html);
         private void FinDescarga(string html)
         {
@@ -91,40 +112,6 @@ namespace Navegador
             }
         }
 
-        private void btnIr_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Thread hilo;
-                Uri web;
-
-                Descargador descargador;
-                web = new Uri(this.txtUrl.Text);
-                descargador = new Descargador(web);
-
-                descargador.evento_Progreso += this.ProgresoDescarga;
-                descargador.evento_Terminado += this.FinDescarga;
-
-                hilo = new Thread(new ThreadStart(descargador.IniciarDescarga));
-                hilo.Start();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "ERROR!!!");
-            }
-            finally
-            {
-                this.archivos.guardar(this.txtUrl.Text);
-            }
-        }
-
-        private void mostrarTodoElHistorialToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmHistorial historial;
-            historial = new frmHistorial();
-            historial.Show();
-        }
-
         private void txtUrl_TextChanged(object sender, EventArgs e)
         {
 
@@ -133,6 +120,64 @@ namespace Navegador
         private void rtxtHtmlCode_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+     
+        /// <summary>
+        /// Descarga la web ingresada en formato html y guarda su URL en el archivo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void btnIr_Click_1(object sender, EventArgs e)
+        {
+            if (!this.txtUrl.Text.Contains("http://"))
+            {
+                this.txtUrl.Text = this.txtUrl.Text.Insert(0, "http://");
+            }
+
+            try
+            {
+                Thread hilo;
+                Uri web;
+                Descargador descargador;
+                web = new Uri(this.txtUrl.Text);
+                descargador = new Descargador(web);
+
+                descargador.PorcentajeDescarga += this.ProgresoDescarga;
+                descargador.DescargaTerminada += this.FinDescarga;
+
+                hilo = new Thread(new ThreadStart(descargador.IniciarDescarga));
+                hilo.Start();
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                this.archivos.guardar(this.txtUrl.Text);
+            }
+        }
+
+        private void historialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, EventArgs e)
+        { }
+
+        /// <summary>
+        /// Muestra el historial de webs visitadas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void mostrarTodoElHistorialToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            frmHistorial historial;
+            historial = new frmHistorial();
+            historial.Show();
         }
     }
 }

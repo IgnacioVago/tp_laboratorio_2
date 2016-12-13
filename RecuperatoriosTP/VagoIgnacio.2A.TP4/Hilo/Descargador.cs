@@ -3,37 +3,43 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Net; 
+
+using System.Net; // Avisar del espacio de nombre
 using System.ComponentModel;
 
 namespace Hilo
 {
-    
+    public delegate void EventoDescargaFinalizada(string html);
+    public delegate void EventoPorcentajeDeDescarga(int porcentaje);
+
     public class Descargador
     {
-        private string _html;
-        private Uri _direccion;
+        private string html;
+        private Uri direccion;
 
-        public delegate void EventProgress(int status);
-        public event EventProgress evento_Progreso;
-        public delegate void EventCompleted(string web);
-        public event EventCompleted evento_Terminado;
-
+        /// <summary>
+        /// Constructor que asigna la direccion.
+        /// </summary>
+        /// <param name="direccion"></param>
         public Descargador(Uri direccion)
         {
-            this._html = "";
-            this._direccion = direccion;
+            this.html = "";
+            this.direccion = direccion;
         }
 
+        /// <summary>
+        /// Se descarga la web pasada anteriormente.
+        /// </summary>
         public void IniciarDescarga()
         {
             try
             {
                 WebClient cliente = new WebClient();
+
                 cliente.DownloadProgressChanged += this.WebClientDownloadProgressChanged;
                 cliente.DownloadStringCompleted += this.WebClientDownloadCompleted;
 
-                cliente.DownloadStringAsync(this._direccion);
+                cliente.DownloadStringAsync(this.direccion);
             }
             catch (Exception e)
             {
@@ -41,27 +47,28 @@ namespace Hilo
             }
         }
 
-
+        public event EventoPorcentajeDeDescarga PorcentajeDescarga;
+        /// <summary>
+        /// Metodo que lanza un evento que actualiza el porcentaje de la descarga.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void WebClientDownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
-            this.evento_Progreso(e.ProgressPercentage);
+            this.PorcentajeDescarga(e.ProgressPercentage);
         }
 
-        
+
+        public event EventoDescargaFinalizada DescargaTerminada;
+        /// <summary>
+        /// Metodo que lanza un evento que posee el codigo descargado. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void WebClientDownloadCompleted(object sender, DownloadStringCompletedEventArgs e)
         {
-            try
-            {
-                this._html = e.Result;
-            }
-            catch (Exception exception)
-            {
-                this._html = exception.Message;
-            }
-            finally
-            {
-                this.evento_Terminado(this._html);
-            }
+            this.html = e.Result;
+            this.DescargaTerminada(this.html);
         }
     }
 }

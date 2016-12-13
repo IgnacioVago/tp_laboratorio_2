@@ -49,7 +49,7 @@
             this.btnIr.TabIndex = 0;
             this.btnIr.Text = "-->";
             this.btnIr.UseVisualStyleBackColor = true;
-            this.btnIr.Click += new System.EventHandler(this.btnIr_Click);
+            this.btnIr.Click += new System.EventHandler(this.btnIr_Click_1);
             // 
             // statusStrip
             // 
@@ -75,7 +75,6 @@
             this.txtUrl.Size = new System.Drawing.Size(852, 20);
             this.txtUrl.TabIndex = 2;
             this.txtUrl.Tag = "Introduzca la dirección web";
-            this.txtUrl.TextChanged += new System.EventHandler(this.txtUrl_TextChanged);
             this.txtUrl.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUrl_KeyDown);
             this.txtUrl.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtUrl_KeyUp);
             this.txtUrl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtUrl_MouseDown);
@@ -92,7 +91,6 @@
             this.rtxtHtmlCode.Size = new System.Drawing.Size(918, 337);
             this.rtxtHtmlCode.TabIndex = 3;
             this.rtxtHtmlCode.Text = "";
-            this.rtxtHtmlCode.TextChanged += new System.EventHandler(this.rtxtHtmlCode_TextChanged);
             // 
             // menuStrip1
             // 
@@ -103,6 +101,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(918, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // historialToolStripMenuItem
             // 
@@ -111,12 +110,14 @@
             this.historialToolStripMenuItem.Name = "historialToolStripMenuItem";
             this.historialToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.historialToolStripMenuItem.Text = "Historial";
+            this.historialToolStripMenuItem.Click += new System.EventHandler(this.historialToolStripMenuItem_Click);
             // 
             // mostrarTodoElHistorialToolStripMenuItem
             // 
             this.mostrarTodoElHistorialToolStripMenuItem.Name = "mostrarTodoElHistorialToolStripMenuItem";
             this.mostrarTodoElHistorialToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.mostrarTodoElHistorialToolStripMenuItem.Text = "Mostrar todo el Historial";
+            this.mostrarTodoElHistorialToolStripMenuItem.Click += new System.EventHandler(this.mostrarTodoElHistorialToolStripMenuItem_Click_1);
             // 
             // frmWebBrowser
             // 
